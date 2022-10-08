@@ -1,0 +1,30 @@
+{
+  "name": "magoa",
+  "version": "0.0.1",
+  "description": "Magoa Discord bot projesi",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "type": "module",
+  "author": "tB#3520",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^1.2.0",
+    "crypto": "^1.0.1",
+    "discord.js": "^14.5.0",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "ioredis": "^5.2.3",
+    "microtime": "^3.1.1",
+    "moment": "^2.29.4",
+    "mongoose": "^6.6.1",
+    "nodejs-base64-encode": "^1.1.0",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
+  },
+  "keywords": []
+}
