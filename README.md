@@ -1,18 +1,24 @@
 # Mágoa
 
 >### **Açıklama**
-Proje kendi **MongoDB** sunucunuz ve **Redis** sunucunuz olduğu var sayılarak hazırlanmıştır. Eğer **MongoDB** ve **Redis** sunucularınızı nasıl kuracağınızı bilmiyorsanız internetten araştırabilirsiniz. Sunucularınız hazır ise [.env]()
-
->### **Kurulum**
-### **Öncelikli Adımlar**
- - [Nodejs 16.17.1](https://nodejs.org/en/download/) sunucuya kurulur.
- - [Redis](https://redis.io/download/) sunucuya kurulur.
-- [MongoDB](https://www.mongodb.com/try/download/community) sunucuya kurulur.
++ Proje kendi **MongoDB** sunucunuz ve **Redis** sunucunuz olduğu var sayılarak hazırlanmıştır. Eğer **MongoDB** ve **Redis** sunucularınızı nasıl kuracağınızı bilmiyorsanız internetten araştırabilirsiniz.
++ Proje **NodeJS** ile yazılmıştır. Eğer **NodeJS** kurulu değilse [buradan](https://nodejs.org/en/download/) indirebilirsiniz.
++ Sunucu olarak **Ubuntu 20** ve üzeri tercih etmeniz projenin sağlıklı çalışması için ve ön bellek olarak **Redis** kullanıldığı için **Ubuntu 20** ve üzeri tercih edilmelidir.
 
 ---
-### **İkinci Adımlar**
- - [Config](/config/) dosyalarını düzenlemeyle işe başlayın, sıradaki adım olarak `npm install` komutunu kullanıyoruz ve modülleri kuruyoruz.
- - `node .` komutu ile start veriyoruz.
+>### **Kurulum**
+ + [.env.example](/.env.example) dosyasını **.env** olarak değiştirin ve içerisindeki bilgileri doldurun. Daha sonra **npm install** komutunu çalıştırın ve **npm start** komutu ile botu başlatabilirsiniz.
++ [config/bot](/config/bot/) klasörü içerisindeki tüm dosyaları düzenleyin.
+
+---
+### **Self-Host ve Node kurulum**
+ - [Nodejs 16.17.1](https://nodejs.org/en/download/) indirin ve sunucunuza kurun.
+ - [Redis](https://redis.io/download/) sunucuya kurulur.
+ - [MongoDB](https://www.mongodb.com/try/download/community) sunucuya kurulur.
+
+---
+### **Botu Çalıştırma**
++ Tüm config dosyalarını düzenledikten sonra `npm install` komutunu çalıştırın ve `npm start` komutu ile botu başlatabilirsiniz.
 
 ---
 
