@@ -1,11 +1,11 @@
->### **Açıklama**
+### **Açıklama**
 + Proje kendi **MongoDB** sunucunuz ve **Redis** sunucunuz olduğu var sayılarak hazırlanmıştır. Eğer **MongoDB** ve **Redis** sunucularınızı nasıl kuracağınızı bilmiyorsanız internetten araştırabilirsiniz.
 + Proje **NodeJS** ile yazılmıştır. Eğer **NodeJS** kurulu değilse [buradan](https://nodejs.org/en/download/) indirebilirsiniz.
 + Sunucu olarak **Ubuntu 20** ve üzeri tercih etmeniz projenin sağlıklı çalışması için ve ön bellek olarak **Redis** kullanıldığı için **Ubuntu 20** ve üzeri tercih edilmelidir.
 + Bu repoyu kullanarak yaptığınızı projelerde bı teşekkürü hor görmezseniz sevinirim.
 
 ---
->### **Kurulum**
+### **Kurulum**
  + [.env.example](/.env.example) dosyasını **.env** olarak değiştirin ve içerisindeki bilgileri doldurun.
 + [config/bot](/config/bot/) klasörü içerisindeki tüm dosyaları düzenleyin.
 
@@ -21,7 +21,7 @@
 
 ---
 
->### **Hazır Sistemler** ([x] yapıldı [-] yapılacak)
+### **Hazır Sistemler** ([x] yapıldı [-] yapılacak)
  - [x] Web sitesinden paytr entegreli ödeme sistemi ve otomatik bakiyeyi tanımlama
  - [x] Premium Sistemi
    - [x] Market
@@ -55,7 +55,7 @@
 
 
 
->### **Premium seviyeleri**
+### **Premium seviyeleri**
 - **1. seviye**
   + %10 daha az cooldown süresi
   + Premium komutlara erişim
