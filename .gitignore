@@ -1,8 +1,0 @@
-package-lock.json
-node_modules
-.tmp.driveupload
-.env
-config/bot/settings.js
-config/api/settings.js
-config/security/database.js
-config/bot/ids.js
