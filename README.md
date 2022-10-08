@@ -1,5 +1,3 @@
-# Mágoa
-
 >### **Açıklama**
 + Proje kendi **MongoDB** sunucunuz ve **Redis** sunucunuz olduğu var sayılarak hazırlanmıştır. Eğer **MongoDB** ve **Redis** sunucularınızı nasıl kuracağınızı bilmiyorsanız internetten araştırabilirsiniz.
 + Proje **NodeJS** ile yazılmıştır. Eğer **NodeJS** kurulu değilse [buradan](https://nodejs.org/en/download/) indirebilirsiniz.
