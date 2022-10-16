@@ -3,7 +3,7 @@ import contextMenu from "../../lib/events/guild/interactionCreate/contextMenu.js
 import realInfoInput from "../../lib/events/guild/interactionCreate/realInfo-input.js";
 import realInfo from "../../lib/events/guild/interactionCreate/realInfo.js";
 import rules from "../../lib/events/guild/interactionCreate/rules.js";
-import { getBlacklist, getLanguage, getPremium } from "../../lib/manager/database.js";
+import { getBlacklist, getLanguage } from "../../lib/manager/database.js";
 import settings from "../../../../config/bot/example.settings.js";
 import slashCommands from "../../lib/events/guild/interactionCreate/slashCommands.js";
 import embedManager from "../../lib/manager/embedManager.js";
@@ -14,11 +14,6 @@ export default async (client, interaction) => {
     const checkLang  = await getLanguage({ guildId: interaction.guild.id, key: `guild:${interaction.guild.id}:guild` }) || settings.language;
     const langFolder = await import(`../../l18n/lang/${checkLang}.js`).then(function(m) { return m.default; });
     const lang = (str, opt) => language({str, opt, langFolder});
-
-    const checkPremium = await getPremium({ userId: interaction.member.id, key: `user:${interaction.member.id}:premium` });
-    if ((checkPremium?.active === 'false' || !checkPremium?.active) && command.config.onlyPre) {
-        return message.reply({ embeds: [embedManager({ description: lang('messageCreate.onlyPre.message', { prefix })}) ]});
-    }
 
     // karaliste sunucu ve kullanıcı kontrolü
     const checkServerBL = await getBlacklist({ id: interaction.guild.id, key: `guild:${interaction.guild.id}:blacklist`, userr: false });

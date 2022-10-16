@@ -170,7 +170,7 @@ export default {
 
         balance: {
             desc: "Hesabındaki bakiye {{balance}} {{currency}} ve harcadığın bakiye {{spentBalance}} {{currency}} olarak gözüküyor.",
-            descNoBalance: "Hesabında bakiye bulunamadı\nHesabına bakiye yüklemek için **{{prefix}}{commandName} bakiye yükle [yüklenecek miktar]**",
+            descNoBalance: "Hesabında bakiye bulunamadı\nHesabına bakiye yüklemek için **{{prefix}}{{commandName}} bakiye yükle [yüklenecek miktar]**",
             charge: {
                 enterNumber: "Lütfen yüklenecek miktarı belirtin.",
                 invalidNumber: "Lütfen geçerli bir miktar belirtin.",

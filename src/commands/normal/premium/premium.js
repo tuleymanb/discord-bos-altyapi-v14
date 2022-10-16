@@ -1,11 +1,11 @@
 import embedManager from "../../../structures/lib/manager/embedManager.js"
-import shop from "../../../../config/bot/example.shop.js"
+import shop from "../../../../config/bot/shop.js"
 import { getPayment, getPremium, getRealInfo, getUser, setBalance, setPayment, setPremium } from "../../../structures/lib/manager/database.js"
 import Discord from "discord.js"
 import moment from "moment"
 import apiConf from "../../../../config/api/settings.js"
 
-const { ActionRowBuilder, ButtonBuilder, ModalBuilder, TextInputBuilder } = Discord;
+const { ActionRowBuilder, ButtonBuilder } = Discord;
 
 export const config = {
     name:  {
@@ -66,14 +66,14 @@ export async function run({ client, message, args, prefix, lang, checkLang }) {
             var totalTime = upDate({ days: remDay + shop.items[checkPremium.level - 1].expire });
             if (newSpentBalance === 'NaN') newSpentBalance = newPrice;
         } else {
-            var newBalance = Number(checkUser.balance) - shop.items[args[1] - 1].price
-            var newSpentBalance = Number(checkUser.spentBalance) + shop.items[args[1] - 1].price
+            var newBalance = Number(checkUser?.balance || 0) - shop.items[args[1] - 1].price
+            var newSpentBalance = Number(checkUser?.spentBalance || 0) + shop.items[args[1] - 1].price
             var newPrice = shop.items[args[1] - 1].price
             var totalTime = new Date()
             totalTime.setDate(totalTime.getDate() + shop.items[args[1] - 1].expire)
         }
         
-        if (Number(checkUser.balance) < newPrice) return message.reply({ embeds: [embedManager({ description: lang('premium.buy.insufficientBalance', { prefix, commandName: config.name[checkLang] }), color: "error" })] }).catch(() => { })
+        if (Number(checkUser?.balance || 0) < newPrice) return message.reply({ embeds: [embedManager({ description: lang('premium.buy.insufficientBalance', { prefix, commandName: config.name[checkLang] }), color: "error" })] }).catch(() => { })
         // **${shop.items[args[1] - 1].name}** paketini ${percent > 0 ? `~~${shop.items[args[1] - 1].price}~~ ${newPrice} %${percent.toFixed(2)}\`⬇\`` : `${shop.items[args[1] - 1].price}`} ${shop.shop.currency} satın almak istediğine emin misin?
         const embed = embedManager({ description: lang('premium.buy.areYouSure', { itemName: shop.items[args[1] - 1].name }), price: percent > 0 ? `~~${shop.items[args[1] - 1].price}~~ ${newPrice} %${percent.toFixed(2)}\`⬇\`` : `${shop.items[args[1] - 1].price}`, currency: shop.shop.currency })
         const button = new ActionRowBuilder()

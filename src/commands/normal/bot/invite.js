@@ -7,7 +7,10 @@ export const config = {
         "tr-TR": [],
         "en-US": []
     },
-    description: "Botun pingini gösterir.",
+    description: {
+        "tr-TR": "",
+        "en-US": ""
+    },
     usage: {
         "tr-TR": "{{prefix}}davet",
         "en-US": "{{prefix}}invite"

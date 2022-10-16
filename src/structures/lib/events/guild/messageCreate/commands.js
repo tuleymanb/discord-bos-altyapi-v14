@@ -8,7 +8,7 @@ import ids from "../../../../../../config/bot/example.ids.js";
 export default async ({ client, message, prefix, args, lang, checkLang, command }) => {
     // kuralları kabul etmemişse komutları kullanamaz
     const rulesAccepted = await getRulesAccepted({ userId: message.member.id, username: `${message.member?.user?.username || 'unknown'}#${message.member?.user?.discriminator || '0000'}`, key: `user:${message.member.id}:user` });
-    if (!rulesAccepted) return await import("../../lib/events/guild/messageCreate/rules.js").then(function(m) { m.default({client, message, lang}); });
+    if (rulesAccepted !== 'true' && rulesAccepted !== true) return await import("./rules.js").then(function(m) { m.default({client, message, lang}); });
 
     const checkPremium = await getPremium({ userId: message.author.id, key: `user:${message.author.id}:premium` });
     if ((checkPremium?.active === 'false' || !checkPremium?.active) && command.config.onlyPre) {

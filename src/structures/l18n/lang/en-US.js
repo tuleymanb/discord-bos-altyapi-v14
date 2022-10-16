@@ -170,7 +170,7 @@ export default {
 
         balance: {
             desc: "The balance in your account is {{balance}} {{currency}} and the balance you spent is {{spentBalance}} {{currency}}.",
-            descNoBalance: "No balance found in your account\nTo top up your account with balance **{{prefix}}{commandName} balance [to load]**",
+            descNoBalance: "No balance found in your account\nTo top up your account with balance **{{prefix}}{{commandName}} balance [to load]**",
             charge: {
                 enterNumber: "Please specify the amount to be loaded.",
                 invalidNumber: "Lütfen geçerli bir miktar belirtin.",
